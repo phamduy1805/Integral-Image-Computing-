@@ -6,8 +6,8 @@ entity microprocessor is
 	clock: in std_logic;
 	Start: in std_logic;
 	Reset: in std_logic;
+	inp: out std_logic_vector (23 downto 0);
 	outp: out std_logic_vector (23 downto 0);	
-	r,c: out std_logic_vector (8 downto 0);
 	done: out std_logic
 	);
 end microprocessor;
@@ -158,6 +158,5 @@ begin
 	data_out => in_pixel_cpu
 	);
 	outp <= out_pixel_cpu;
-	r <= in_pixel_cpu(8 downto 0);
-	c <= in_pixel_cpu(8 downto 0);
+	inp <= in_pixel_cpu;
 end structural;
